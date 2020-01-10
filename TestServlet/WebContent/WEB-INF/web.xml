@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+
+	<servlet>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.test.servlet.Test</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/toto/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>com.test.servlet.FormServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Disconnect</servlet-name>
+		<servlet-class>com.test.servlet.Disconnect</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Disconnect</servlet-name>
+		<url-pattern>/disconnect</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UtilisateurServlet</servlet-name>
+		<servlet-class>com.test.servlet.UtilisateurServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UtilisateurServlet</servlet-name>
+		<url-pattern>/creationUtilisateur</url-pattern>
+	</servlet-mapping>
+	
+
+	<filter>
+		<filter-name>RestrictionFilter</filter-name>
+		<filter-class>com.test.filter.RestrictionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/restreint/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+   		<listener-class>com.test.config.InitialisationDaoFactory</listener-class>
+	</listener>
+</web-app>
